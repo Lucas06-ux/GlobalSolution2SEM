@@ -3,10 +3,10 @@ package br.com.fiap.model;
 import java.time.LocalDate;
 
 public class Projeto {
-    int codigo;
-    String conteudo;
-    LocalDate dataEntrada;
-    int codigoUsuario;
+   private int codigo;
+   private String conteudo;
+   private LocalDate dataEntrada;
+   private int codigoUsuario;
 
     public Projeto() {
     }

@@ -54,7 +54,7 @@ public class AvaliacaoResource {
     }
 
     @POST
-    public Response criar(@Valid CadastroAvaliacaoDto dto, @Context UriInfo uriInfo) throws Exception {
+    public Response criar(@Valid CadastroAvaliacaoDto dto, @Context UriInfo uriInfo) throws SQLException {
         Avaliacao avaliacao = mapper.map(dto, Avaliacao.class);
         avaliacaoBO.cadastrar(avaliacao);
 
@@ -64,7 +64,7 @@ public class AvaliacaoResource {
 
     @PUT
     @Path("/{id}")
-    public Response atualizar(@PathParam("id") int codigo, @Valid AtualizarAvaliacaoDto dto) throws Exception {
+    public Response atualizar(@PathParam("id") int codigo, @Valid AtualizarAvaliacaoDto dto) throws EntidadeNaoEncontrada, SQLException {
         Avaliacao avaliacao = mapper.map(dto, Avaliacao.class);
         avaliacao.setCodigo(codigo);
         avaliacaoBO.atualizar(avaliacao);
@@ -73,7 +73,7 @@ public class AvaliacaoResource {
 
     @DELETE
     @Path("/{id}")
-    public Response remover(@PathParam("id") int codigo) throws Exception {
+    public Response remover(@PathParam("id") int codigo) throws SQLException, EntidadeNaoEncontrada {
         avaliacaoBO.remover(codigo);
         return Response.noContent().build();
     }

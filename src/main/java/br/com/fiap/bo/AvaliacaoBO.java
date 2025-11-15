@@ -24,16 +24,12 @@ public class AvaliacaoBO {
     private ProjetoDAO projetoDAO;
 
     public void cadastrar(Avaliacao a) throws SQLException, EntidadeNaoEncontrada {
-
         if (a.getNota() < 0 || a.getNota() > 10)
             throw new IllegalArgumentException("A nota deve ser entre 0 e 10.");
-
         if (a.getDataAvaliacao() == null)
             a.setDataAvaliacao(LocalDate.now());
-
         usuarioDAO.buscar(a.getIdUsuario());
         projetoDAO.buscar(a.getIdProjeto());
-
         avaliacaoDAO.cadastrar(a);
     }
 
@@ -54,13 +50,10 @@ public class AvaliacaoBO {
     }
 
     public void atualizar(Avaliacao a) throws SQLException, EntidadeNaoEncontrada {
-
         if (a.getNota() < 0 || a.getNota() > 10)
             throw new IllegalArgumentException("A nota deve ser entre 0 e 10.");
-
         usuarioDAO.buscar(a.getIdUsuario());
         projetoDAO.buscar(a.getIdProjeto());
-
         avaliacaoDAO.atualizar(a);
     }
 

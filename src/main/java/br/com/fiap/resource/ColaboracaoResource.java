@@ -54,7 +54,7 @@ public class ColaboracaoResource {
     }
 
     @POST
-    public Response criar(@Valid CadastroColaboracaoDto dto, @Context UriInfo uriInfo) throws Exception {
+    public Response criar(@Valid CadastroColaboracaoDto dto, @Context UriInfo uriInfo) throws SQLException {
         Colaboracao colab = mapper.map(dto, Colaboracao.class);
         colaboracaoBO.cadastrar(colab);
 
@@ -64,7 +64,7 @@ public class ColaboracaoResource {
 
     @PUT
     @Path("/{id}")
-    public Response atualizar(@PathParam("id") int codigo, @Valid AtualizarColaboracaoDto dto) throws Exception {
+    public Response atualizar(@PathParam("id") int codigo, @Valid AtualizarColaboracaoDto dto) throws SQLException, EntidadeNaoEncontrada {
         Colaboracao colab = mapper.map(dto, Colaboracao.class);
         colab.setCodigo(codigo);
         colaboracaoBO.atualizar(colab);
@@ -73,7 +73,7 @@ public class ColaboracaoResource {
 
     @DELETE
     @Path("/{id}")
-    public Response remover(@PathParam("id") int codigo) throws Exception {
+    public Response remover(@PathParam("id") int codigo) throws SQLException, EntidadeNaoEncontrada {
         colaboracaoBO.remover(codigo);
         return Response.noContent().build();
     }

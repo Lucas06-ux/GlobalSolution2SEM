@@ -3,10 +3,10 @@ package br.com.fiap.dto.projeto;
 import java.time.LocalDate;
 
 public class DetalhesProjetoDto {
-    int codigo;
-    String conteudo;
-    LocalDate dataEntrada;
-    int codigoUsuario;
+    private int codigo;
+    private String conteudo;
+    private LocalDate dataEntrada;
+    private int codigoUsuario;
 
     public int getCodigo() {
         return codigo;

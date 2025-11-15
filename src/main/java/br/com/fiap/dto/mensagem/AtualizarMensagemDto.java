@@ -10,16 +10,16 @@ import java.time.LocalDate;
 public class AtualizarMensagemDto {
     @NotBlank(message = "O conteúdo da mensagem é obrigatório")
     @Size(max = 200)
-    String conteudo;
+    private String conteudo;
 
     @PastOrPresent(message = "A data não pode ser futura")
-    LocalDate dataEnvio;
+    private LocalDate dataEnvio;
 
     @Positive(message = "Usuário inválido")
-    int idUsuario;
+    private int idUsuario;
 
     @Positive(message = "Projeto inválido")
-    int idProjeto;
+    private int idProjeto;
 
     public String getConteudo() {
         return conteudo;

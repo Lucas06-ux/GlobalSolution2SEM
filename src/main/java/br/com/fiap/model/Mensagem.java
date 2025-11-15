@@ -3,11 +3,11 @@ package br.com.fiap.model;
 import java.time.LocalDate;
 
 public class Mensagem {
-    int codigo;
-    String conteudo;
-    LocalDate dataEnvio;
-    int idUsuario;
-    int idProjeto;
+   private int codigo;
+   private String conteudo;
+   private  LocalDate dataEnvio;
+   private int idUsuario;
+   private int idProjeto;
 
     public Mensagem() {}
 

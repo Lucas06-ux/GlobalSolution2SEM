@@ -11,24 +11,24 @@ public class CadastroTarefaDto {
 
     @NotBlank(message = "A tarefa deve ter um nome")
     @Size(max = 100)
-    String nome;
+    private String nome;
 
     @NotBlank(message = "A tarefa deve ter uma descrição")
     @Size(max = 120)
-    String descricaoTarefa;
+    private String descricaoTarefa;
 
     @NotBlank(message = "É necessário informar a qual área a tarefa está ligada")
     @Size(max = 80)
-    String area;
+    private String area;
 
     @NotBlank(message = "é necessário informar o status da tarefa(iniciada, em andamento, encerrada ou ativa)")
     @Size(max = 40)
-    String status;
+    private String status;
 
 
-    LocalDate dataCriacao;
+    private LocalDate dataCriacao;
 
-    LocalDate dataConclusao;
+    private LocalDate dataConclusao;
 
     @Positive(message = "O código tem que ser maior que 0")
     int codigoProjeto;

@@ -9,12 +9,12 @@ import java.time.LocalDate;
 public class CadastroProjetoDto {
     @NotBlank(message = "É necessário informar o conteúdo do projeto!")
     @Size(max = 50)
-    String conteudo;
+    private String conteudo;
 
-    LocalDate dataEntrada;
+    private LocalDate dataEntrada;
 
     @Positive(message = "O código tem que ser maior que 0")
-    int codigoUsuario;
+    private int codigoUsuario;
 
     public String getConteudo() {
         return conteudo;

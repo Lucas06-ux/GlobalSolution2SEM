@@ -3,14 +3,14 @@ package br.com.fiap.dto.tarefa;
 import java.time.LocalDate;
 
 public class DetalhesTarefaDto {
-    int codigo;
-    String nome;
-    String descricaoTarefa;
-    String area;
-    String status;
-    LocalDate dataCriacao;
-    LocalDate dataConclusao;
-    int codigoProjeto;
+    private int codigo;
+    private String nome;
+    private String descricaoTarefa;
+    private String area;
+    private String status;
+    private LocalDate dataCriacao;
+    private LocalDate dataConclusao;
+    private int codigoProjeto;
 
     public int getCodigo() {
         return codigo;
