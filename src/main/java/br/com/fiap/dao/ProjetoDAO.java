@@ -2,7 +2,6 @@ package br.com.fiap.dao;
 
 import br.com.fiap.exception.EntidadeNaoEncontrada;
 import br.com.fiap.model.Projeto;
-import br.com.fiap.model.Usuario;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

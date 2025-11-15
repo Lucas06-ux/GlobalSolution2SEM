@@ -25,7 +25,6 @@ public class ProjetoBO {
                 projeto.getDataEntrada().isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("A data de entrada não pode ser futura!");
         }
-
         Usuario usuario = usuarioDAO.buscar(projeto.getCodigoUsuario());
         if (usuario == null) {
             throw new EntidadeNaoEncontrada("Usuário responsável pelo projeto não existe!");
@@ -48,14 +47,14 @@ public class ProjetoBO {
     }
 
     public void atualizar(Projeto projeto) throws SQLException, EntidadeNaoEncontrada {
-        if (projeto.getConteudo() == null || projeto.getConteudo().isBlank()) {
-            throw new IllegalArgumentException("O conteúdo do projeto não pode estar vazio!");
-        }
         if (projeto.getDataEntrada() != null &&
                 projeto.getDataEntrada().isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("A data de entrada não pode ser futura!");
         }
-        usuarioDAO.buscar(projeto.getCodigoUsuario());
+        Usuario usuario = usuarioDAO.buscar(projeto.getCodigoUsuario());
+        if (usuario == null) {
+            throw new EntidadeNaoEncontrada("Usuário responsável pelo projeto não existe!");
+        }
         projetoDAO.atualizar(projeto);
     }
 
